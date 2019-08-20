@@ -1,0 +1,8 @@
+<div class="chart" *ngIf="chartData">
+     <google-chart #chart [title]="title" [type]="type" [data]="data" [columnNames]="columnNames" [options]="options"
+          [width]="width" [height]="height">
+     </google-chart>
+</div>
+<div *ngElse>
+     <h2>Is Loading...</h2>
+</div>

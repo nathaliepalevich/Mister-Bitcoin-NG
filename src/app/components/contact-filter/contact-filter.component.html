@@ -1,0 +1,4 @@
+<label for="">Search contact</label>
+<input #term type="text" (keyup)="searchContact(term.value)">
+<p>{{term.value}}</p>
+<!-- <button (keyDown)="goSearch($event)">Search</button> -->

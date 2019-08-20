@@ -1,0 +1,5 @@
+<div *ngIf="marketprice.name && confirmedTransactions.name; else loading">
+     <Chart [chartData]='marketprice'></Chart>
+     <Chart [chartData]='confirmedTransactions'></Chart>
+     <h1 #loading>Is loading</h1>
+</div>

@@ -1,0 +1,8 @@
+<ul class="contact-list">
+   <li class="contact-container" *ngFor="let contact of contacts">
+      <a routerLink="/contact/{{contact._id}}">
+         <contact-preview [contact]="contact">
+         </contact-preview>
+      </a>
+   </li>
+</ul>

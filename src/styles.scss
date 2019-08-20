@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+     color: aliceblue;
+     border-radius: 10px;
+     background-color: black;
+
+}
+
+input {
+padding: 5px;
+margin: 5px;
+}
+
+button {
+     cursor: pointer;
+}
+
+   nav a {
+     padding: 5px 10px;
+     text-decoration: none;
+     margin-top: 10px;
+     display: inline-block;
+     // background-color: #eee;
+     border-radius: 4px;
+     margin: 5px;
+   }
+    a:visited, a:link {
+     color: aliceblue;
+   }
+    a:hover {
+     background-color: rgba(240, 248, 255, 0.473);
+   }
+  

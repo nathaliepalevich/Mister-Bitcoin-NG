@@ -1,0 +1,11 @@
+<p>contact-edit-page works!</p>
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+     <label for="">Name:</label>
+     <input type="text" formControlName="name">
+     <label for="">Phone:</label>
+     <input type="tel" formControlName="phone">
+     <label for="">Email:</label>
+     <input type="text" formControlName="email">
+     <button type="submit">Submit</button>
+</form>
