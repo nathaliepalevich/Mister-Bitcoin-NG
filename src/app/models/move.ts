@@ -1,6 +1,6 @@
 export default interface Move {
      toId: string
      to: string
-     at: number
+     at: string
      amount: number
 }

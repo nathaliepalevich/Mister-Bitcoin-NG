@@ -21,13 +21,13 @@ import { InputComponent } from './components/input/input.component';
 import { ChartComponent } from './components/chart/chart.component';
 import { TransferFoundComponent } from './components/transfer-found/transfer-found.component';
 import { MoveListComponent } from './components/move-list/move-list.component';
+import { SuccessAlertComponent } from './components/success-alert/success-alert.component';
+import { WarningAlertComponent } from './components/warning-alert/warning-alert.component';
 
 import { BitcoinService } from './service/bitcoinService/bitcoin.service';
 import { ContactService } from './service/contactService/contact.service';
 import { UserService } from './service/userService/user.service';
-
-// import { ConfirmedTransactions } from './models/confirmedTransactions';
-// import { ConfirmedTransactions } from './models/confirmed-transactions.ts/confirmed-transactions.ts.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -46,10 +46,10 @@ import { UserService } from './service/userService/user.service';
     ChartComponent,
     TransferFoundComponent,
     MoveListComponent,
+    SuccessAlertComponent,
+    WarningAlertComponent,
+    HeaderComponent,
 
-
-    // ConfirmedTransactions,
-    // ConfirmedTransactions.TsComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +58,8 @@ import { UserService } from './service/userService/user.service';
     HttpClientModule,
     HttpClientJsonpModule,
     AppRoutingModule,
-    GoogleChartsModule.forRoot()
+    GoogleChartsModule.forRoot(),
+
   ],
   providers: [BitcoinService, ContactService, UserService],
   bootstrap: [AppComponent]

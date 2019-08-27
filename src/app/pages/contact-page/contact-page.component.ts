@@ -18,7 +18,7 @@ export class ContactPageComponent implements OnInit {
     private userService: UserService
   ) { }
 
-  contacts: Contact[]
+  contacts: Contact[] = []
   contact: Contact = new Contact()
 
   @Input() user: User

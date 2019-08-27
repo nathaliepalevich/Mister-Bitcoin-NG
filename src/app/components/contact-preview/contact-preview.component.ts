@@ -8,8 +8,7 @@ import Contact from 'src/app/models/contact';
 })
 export class ContactPreviewComponent implements OnInit {
 
-  @Input() contact: Contact = new Contact();
-
+  @Input() contact: Contact 
   constructor() { }
 
   ngOnInit() { }

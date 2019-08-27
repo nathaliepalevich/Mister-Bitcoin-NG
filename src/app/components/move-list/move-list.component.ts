@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import Contact from 'src/app/models/contact';
 import User from 'src/app/models/user';
-
+import Move from 'src/app/models/move';
+import { UserService } from '../../service/userService/user.service'
 @Component({
   selector: 'move-list',
   templateUrl: './move-list.component.html',
@@ -9,15 +10,15 @@ import User from 'src/app/models/user';
 })
 export class MoveListComponent implements OnInit {
 
-  @Input() contact: Contact[]
+  // @Input() contact: Contact[]
   @Input() user: User[]
+  @Input() moves: Move[]
 
-  constructor() { }
+  constructor(private userService: UserService) { }
+
 
   ngOnInit() {
-    console.log('move list component:', this.user);
-    console.log('move list component:', this.contact);
-
+    this.userService.moves$.subscribe(movesToShow => this.moves = movesToShow)
   }
 
 }

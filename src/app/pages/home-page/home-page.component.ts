@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import User from 'src/app/models/user';
 import BtcRate from 'src/app/models/btcRate';
+import Move from 'src/app/models/move';
 
 @Component({
   selector: 'home-page',
@@ -12,25 +13,27 @@ import BtcRate from 'src/app/models/btcRate';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  user: User[]
+  user: User
   btc: BtcRate[]
-  constructor(private userservice: UserService, private bitcoinservice: BitcoinService, private router: Router) { }
+  moves: Move[] = []
+  constructor(private userService: UserService, private bitcoinservice: BitcoinService, private router: Router) { }
 
   ngOnInit() {
-    this.userservice.user$.subscribe(registerdUser => {
+    this.userService.user$.subscribe(registerdUser => {
       this.user = registerdUser
     })
+    this.userService.getUser('')
 
+      if (!this.user) {
+        this.router.navigateByUrl('/signup');
+        return
+      }
     this.bitcoinservice.btcRate$.subscribe(btc => {
       this.btc = btc
     })
 
-    this.userservice.getUser()
+    this.userService.moves$.subscribe(movesToShow => this.moves = movesToShow)
 
-    if (!this.user) {
-      this.router.navigateByUrl('/signup');
-      return
-    }
 
     this.bitcoinservice.getRate(this.user)
 

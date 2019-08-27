@@ -12,7 +12,6 @@ export class SignupPageComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   signup(name) {
-    console.log('name', name);
     this.userService.signup(name)
   }
   ngOnInit() {

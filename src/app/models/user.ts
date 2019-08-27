@@ -6,9 +6,9 @@ export default class User {
      img?: string;
 
      constructor(
-          public coins: number = 100,
-          public name: string = "",
-          public moves: Array<Move> = []
+          public coins: number ,
+          public name: string,
+          public moves: Array<Move>
      ) { }
 
      public setId?() {

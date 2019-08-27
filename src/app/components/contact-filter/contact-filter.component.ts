@@ -10,8 +10,7 @@ export class ContactFilterComponent implements OnInit {
 
   constructor(private contactService: ContactService) { }
 
-  @Input()
-  contacts: Array<Contact>
+  @Input() contacts: Array<Contact>
 
   searchContact(input) {
     const term = { term: input }

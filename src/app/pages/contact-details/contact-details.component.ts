@@ -7,6 +7,7 @@ import { UserService } from '../../service/userService/user.service'
 
 import Contact from '../../models/contact'
 import User from 'src/app/models/user';
+import Move from 'src/app/models/move';
 
 @Component({
   selector: 'contact-details',
@@ -16,7 +17,6 @@ import User from 'src/app/models/user';
 export class ContactDetailsComponent implements OnInit {
   editContact(id) {
     this.router.navigateByUrl(`/contact/edit/${id}`);
-    console.log('id', id);
 
   }
   constructor(
@@ -28,8 +28,8 @@ export class ContactDetailsComponent implements OnInit {
   ) { }
 
   contact: Contact
-  user: User[]
-
+  user: User
+  moves: Move[]
 
   deleteContact(id) {
     this.ContactService.deleteContact(id)
@@ -37,17 +37,17 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   getUser() {
-    this.userService.user$.subscribe(user => this.user = user)
+    this.userService.getUser(this.contact._id)
+    // this.userService.user$.subscribe(user => this.user = user)
   }
 
   getContact(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.ContactService.getContactById(id)
       .subscribe(contact => this.contact = contact)
-    this.ContactService.currContactId = this.contact._id
-    console.log('tshi contavct', this.contact);
-
+    
   }
+
 
 
   goBack(): void {
@@ -55,8 +55,12 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    this.getUser()
     this.getContact()
+    this.ContactService.currContactId = this.contact._id
+    this.userService.moves$.subscribe(movesToShow => {
+      this.moves = movesToShow
+    })
+    this.getUser()
+
   }
 }

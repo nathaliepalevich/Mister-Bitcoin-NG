@@ -1,5 +1,7 @@
-<div *ngIf="marketprice.name && confirmedTransactions.name; else loading">
+<div *ngIf="marketprice && confirmedTransactions; else loading">
      <Chart [chartData]='marketprice'></Chart>
      <Chart [chartData]='confirmedTransactions'></Chart>
-     <h1 #loading>Is loading</h1>
+     <ng-template #loading>
+          <h1>Is loading</h1>
+     </ng-template>
 </div>
