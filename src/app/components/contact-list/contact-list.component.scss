@@ -1,18 +1,14 @@
-.contact-list{
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     list-style: none;
-     background-color: black;
-     color: aliceblue;
-     width: 600px;
-     border-radius: 10px;
+.list-group li {
+  background: none;
+  border: 1px solid azure;
+  border-radius: 20px;
+  margin: 5px;
+  width: 600px
 }
 
-a{
-     text-decoration: none;
-     color: white;
-}
-.contact-container{
-     text-align: center;
+
+@media only screen and (max-width: 640px) {
+  li {
+    max-width: 350px;
+  }
 }

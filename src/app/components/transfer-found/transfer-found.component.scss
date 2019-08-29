@@ -1,6 +1,22 @@
-.transfer-found{
-     // border-radius: 10px;
-     //      background-color: black;
-     // padding: 10px;
-     // color: aliceblue;
+.transfer-found {
+  padding: 10px;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+}
+
+.input-group {
+  width: 400px;
+}
+
+input,
+input:focus {
+  color: azure;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid azure;
+}
+
+.transfer-found div * {
+  margin: 10px;
 }

@@ -1,8 +1,9 @@
-<div *ngIf="user">
+<div *ngIf="user" class="home-page">
+  <div class="home-page-container">
 
-     <h1>Home Page</h1>
-     <h3>Hello {{user.name}}</h3>
-     <h3>Coins: {{user.coins}}</h3>
-     <h3>BTC: {{btc}}</h3>
-     <move-list [moves]=moves></move-list>
+    <h3 class="text-monospace">Hello {{user.name}}</h3>
+    <h3 class="text-monospace">Currant coins: {{user.coins}}</h3>
+    <h3 class="text-monospace">Bitcoin rate: {{btc}}</h3>
+  </div>
+  <move-list [moves]=moves class="text-monospace"></move-list>
 </div>

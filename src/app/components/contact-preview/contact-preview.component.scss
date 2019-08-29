@@ -1,11 +1,14 @@
-.contact-preview{
-     border: 2px solid white;
-     border-radius: 5px;
-     padding: 5px;
-     margin: 5px;
+.contact-preview {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-img{
-     width: 100px;
-     height: 100px;
+img {
+  width: 100px;
+  height: 100px;
+}
+
+p {
+  align-self: center;
+  color: azure;
 }

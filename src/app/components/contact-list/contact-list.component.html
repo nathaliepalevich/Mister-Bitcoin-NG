@@ -1,8 +1,8 @@
-<ul class="contact-list">
-   <li class="contact-container" *ngFor="let contact of contacts">
-      <a routerLink="/contact/{{contact._id}}">
-         <contact-preview [contact]="contact">
-         </contact-preview>
-      </a>
-   </li>
+<ul class="list-group">
+  <a routerLink="/contact/{{contact._id}}" *ngFor="let contact of contacts">
+    <li class="list-group-item">
+      <contact-preview [contact]="contact">
+      </contact-preview>
+    </li>
+  </a>
 </ul>

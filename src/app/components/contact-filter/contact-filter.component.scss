@@ -1,0 +1,12 @@
+input {
+  outline-style: none;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid azure;
+  border-radius: 20px;
+  font: normal 20px/normal "Courier New", Courier, monospace;
+  text-overflow: ellipsis;
+  letter-spacing: 3px;
+  word-spacing: 2px;
+  transition: text-indent 200ms cubic-bezier(0.075, 0.82, 0.165, 1) 25ms;
+}

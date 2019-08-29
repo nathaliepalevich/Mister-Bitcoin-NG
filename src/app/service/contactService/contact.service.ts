@@ -165,7 +165,6 @@ export class ContactService {
 
   public getContactById(id): Observable<Contact> {
     const contact = this.contacts.find(contact => contact._id === id)
-
     return contact ? of(contact) : Observable.throw(`Contact id ${id} not found!`)
   }
 
@@ -178,7 +177,6 @@ export class ContactService {
   }
 
   public saveContact(contact: Contact) {
-    // contact._id = this.currContactId
     contact._id ? this._updateContact(contact) : this._addContact(contact)
 
   }

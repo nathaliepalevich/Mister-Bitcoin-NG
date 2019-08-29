@@ -1,6 +1,17 @@
-<div>
-     <p>signup-page works!</p>
-     <label for="">User Name</label>
-     <input type="text" #userName>
-     <button (click)="signup(userName.value)">SignUp</button>
+<div class="signup-page">
+
+  <div class="main-container">
+    <h1 class="display-3">Welcome to Mr.Bitcoin</h1>
+    <h2 class="display-4">Please enter you name</h2>
+    <div>
+
+      <div class="input-group mb-3">
+        <input type="text" #userName class="form-control" placeholder="User Name" aria-label="User Name"
+          aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+          (click)="signup(userName.value)">SignUp</button>
+      </div>
+    </div>
+  </div>
+
 </div>

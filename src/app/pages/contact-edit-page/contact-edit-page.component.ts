@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ContactService } from 'src/app/service/contactService/contact.service';
 import { Location } from '@angular/common';
 import Contact from 'src/app/models/contact';
+
 @Component({
   selector: 'app-contact-edit-page',
   templateUrl: './contact-edit-page.component.html',
@@ -10,7 +11,6 @@ import Contact from 'src/app/models/contact';
 })
 export class ContactEditPageComponent implements OnInit {
 
-  // @Input() contact: Contact
   contactForm: FormGroup
   contact = new Contact
   constructor(private ContactService: ContactService, private location: Location) { }

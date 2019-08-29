@@ -1,0 +1,24 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: center
+}
+
+form div *:not(button) {
+  padding: 20px;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: azure 1px solid;
+  outline-style: none;
+  color: azure;
+}
+
+.contact-edit-container {
+  border: 2px solid azure;
+  display: flex;
+  flex-direction: column;
+}

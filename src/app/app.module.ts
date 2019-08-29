@@ -4,6 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { GoogleChartsModule } from 'angular-google-charts';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -49,6 +52,7 @@ import { HeaderComponent } from './components/header/header.component';
     SuccessAlertComponent,
     WarningAlertComponent,
     HeaderComponent,
+    
 
   ],
   imports: [
@@ -59,6 +63,9 @@ import { HeaderComponent } from './components/header/header.component';
     HttpClientJsonpModule,
     AppRoutingModule,
     GoogleChartsModule.forRoot(),
+    NgbModule,
+    TooltipModule.forRoot(),
+    BsDropdownModule.forRoot(),
 
   ],
   providers: [BitcoinService, ContactService, UserService],

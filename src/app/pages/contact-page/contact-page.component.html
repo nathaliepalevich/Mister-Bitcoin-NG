@@ -1,5 +1,7 @@
 <div class="contact-container">
-     <button (click)="addContact()">new Contact</button>
-     <contact-filter (filter)="searchContact(term.value, $event)"></contact-filter>
-     <contact-list [contacts]="contacts"></contact-list>
+  <div class="contact-container-header">
+
+    <contact-filter (filter)="searchContact(term.value, $event)"></contact-filter>
+  </div>
+  <contact-list [contacts]="contacts"></contact-list>
 </div>

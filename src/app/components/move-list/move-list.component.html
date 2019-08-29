@@ -1,10 +1,18 @@
-<div>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Moved To</th>
+      <th scope="col">Move Time</th>
+      <th scope="col">Transfer Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let move of moves">
+      <!-- <th scope="row">1</th> -->
+      <td>@{{move.to}}</td>
+      <td>{{move.at}}</td>
+      <td>{{move.amount}} coins</td>
+    </tr>
 
-     <p>move-list works!</p>
-     <ul>
-          <li *ngFor="let move of moves">
-               <p>{{move.at}}</p>
-               <p>{{move.amount}} coins</p>
-          </li>
-     </ul>
-</div>
+  </tbody>
+</table>

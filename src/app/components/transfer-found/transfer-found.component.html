@@ -1,5 +1,9 @@
-<div class="transfer-found" *ngIf="contact">
-     <p>Transfer coins to {{contact.name}}</p>
-     <label for="">Amount:</label><input type="number" #amount>
-     <button (click)="onTransferCoins(+amount.value)">Transfer</button>
+<div class="transfer-found " *ngIf="contact">
+  <p>Transfer coins to {{contact.name}}</p>
+
+  <div class="input-group mb-3">
+    <input type="number" #amount class="form-control">
+    <button (click)="onTransferCoins(+amount.value)" class="btn btn-outline-secondary" type="button"
+      id="button-addon2">Transfer</button>
+  </div>
 </div>
