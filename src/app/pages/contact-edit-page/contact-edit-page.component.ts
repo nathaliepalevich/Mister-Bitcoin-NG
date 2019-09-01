@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ContactService } from 'src/app/service/contactService/contact.service';
 import { Location } from '@angular/common';
 import Contact from 'src/app/models/contact';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contact-edit-page',
@@ -13,9 +14,10 @@ export class ContactEditPageComponent implements OnInit {
 
   contactForm: FormGroup
   contact = new Contact
-  constructor(private ContactService: ContactService, private location: Location) { }
+  constructor(private route: ActivatedRoute, private ContactService: ContactService, private location: Location) { }
 
   onSubmit() {
+    // const userId = this.route.snapshot.params['id?']
     this.ContactService.saveContact(this.contactForm.value)
     this.location.back();
   }
@@ -29,8 +31,13 @@ export class ContactEditPageComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    // const userId = this.route.snapshot.params['id?']
+    // console.log('userId', userId);
+    
     this.fillForm()
     this.contactForm = new FormGroup({
+      _id: new FormControl(this.contact._id),
       name: new FormControl(this.contact.name, Validators.required),
       email: new FormControl(this.contact.email, Validators.required),
       phone: new FormControl(this.contact.phone,

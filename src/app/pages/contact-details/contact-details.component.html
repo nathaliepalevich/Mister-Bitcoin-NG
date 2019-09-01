@@ -10,7 +10,7 @@
       <p>{{contact.email}}</p>
 
       <div class="button-container">
-
+        <!-- <a [routerLink]="['/contact', 'edit' ,contact._id]">{{contact.name}}</a> -->
         <button class="btn btn-outline-secondary" (click)="editContact(contact._id)">Edit Contact</button>
         <button class="btn btn-outline-secondary" (click)="goBack()">Back</button>
         <button class="btn btn-outline-secondary" (click)="deleteContact(contact._id)">Delete</button>
